@@ -107,12 +107,12 @@ class MainActivity : ComponentActivity(), SensorEventListener {
         handler = Handler(Looper.getMainLooper())
         runnable = object : Runnable {
             override fun run() {
-                if (isRecording) { // Doble verificación
-                    getLastLocation() // Actualizar ubicación antes de grabar
+                if (isRecording) {
+                    getLastLocation()
                     val timestamp = System.currentTimeMillis()
                     val dataLine = "$timestamp,$latitude,$longitude,$altitude,$accelX,$accelY,$accelZ"
                     recordedData.add(dataLine)
-                    // Volver a programar solo si sigue grabando
+                    enviarUDP(dataLine) // Enviar al PC en tiempo real
                     handler.postDelayed(this, 2000)
                 }
             }
@@ -297,6 +297,21 @@ class MainActivity : ComponentActivity(), SensorEventListener {
             e.printStackTrace()
             Toast.makeText(this, "Error al exportar archivo: ${e.message}", Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun enviarUDP(mensaje: String, ipDestino: String = "192.168.1.75", puerto: Int = 5005) {
+        Thread {
+            try {
+                val socket = java.net.DatagramSocket()
+                val buffer = mensaje.toByteArray()
+                val address = java.net.InetAddress.getByName(ipDestino)
+                val packet = java.net.DatagramPacket(buffer, buffer.size, address, puerto)
+                socket.send(packet)
+                socket.close()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }.start()
     }
 
     @Composable
