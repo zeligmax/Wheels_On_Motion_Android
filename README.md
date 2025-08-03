@@ -72,4 +72,4 @@ This project is released under the [MIT License](LICENSE).
 
 ---
 
-*Developed by ZELIGMAX – 2025*
+*Developed by Zeligmax – 2025*
