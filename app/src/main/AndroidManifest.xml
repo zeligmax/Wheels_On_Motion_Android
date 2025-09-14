@@ -26,7 +26,7 @@
         android:theme="@style/Theme.WheelsOnMotion">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD-kIkcBQ8Q03srziFShZoaxuWs9P8ytqI"/>
+            android:value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
