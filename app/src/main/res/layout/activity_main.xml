@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Información GPS -->
+    <TextView
+        android:id="@+id/textGpsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📍 GPS:"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textLatitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitud: 0.0" />
+
+    <TextView
+        android:id="@+id/textLongitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitud: 0.0" />
+
+    <TextView
+        android:id="@+id/textAltitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Altitud: 0.0 m" />
+
+    <!-- Separador -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+    <!-- Información Acelerómetro -->
+    <TextView
+        android:id="@+id/textAccelTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📡 Acelerómetro:"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textAccelX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X: 0.0" />
+
+    <TextView
+        android:id="@+id/textAccelY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Y: 0.0" />
+
+    <TextView
+        android:id="@+id/textAccelZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Z: 0.0" />
+
+    <!-- Mapa -->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        map:uiZoomControls="true"
+        map:mapType="normal" />
+
+    <!-- Botón de grabación -->
+    <Button
+        android:id="@+id/btnRecord"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="▶Empezar Grabación" />
+
+</LinearLayout>
