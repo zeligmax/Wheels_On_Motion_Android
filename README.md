@@ -2,7 +2,7 @@
 
 **Wheels On Motion – Android Edition** is the data-capturing companion app for the artistic sound project [Wheels On Motion (Windows)](https://github.com/zeligmax/Wheels_On_Motion_Windows).
 
-This Android app collects real-time motion data from wheelchair movement using your device’s built-in sensors. The data is saved in a readable `.txt` file, which can then be imported into the desktop sound application to generate immersive audio landscapes.
+This Android app collects real-time motion data from wheelchair movement using your device’s built-in sensors. The data is saved in a readable chart `.csv` file, which can then be imported into the desktop sound application to generate immersive audio landscapes.
 
 ---
 
